@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { NewSongForm } from './NewSongForm';
 
@@ -17,6 +17,10 @@ export const SongList = () => {
     const song = { id: idValue, title };
     setSongs([...songs, song])
   }
+
+  useEffect(() => {
+    console.log('use effect hook', songs);
+  }, [songs])
 
   return (
     <div className='song-list'>
